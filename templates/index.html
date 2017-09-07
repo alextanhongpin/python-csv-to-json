@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>CSV to JSON</title>
+        <style>
+            *, *:before, *:after {
+                padding: 0;
+                margin: 0;
+            }
+
+            body {
+                font-family: Arial, Helvetica, sans-serif;
+            }
+            .header {
+                height: 60px;
+            }
+
+            .col-left, .col-right {
+                height: calc(100vh - 60px);
+                max-width: calc(99vw / 2);
+                width: 100%;
+                display: inline-block;
+            }
+            .col-left {
+                background: #eee;
+            }
+            .textarea {
+                width: 100%;
+                resize: none;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="header">
+            <h1>CSV to JSON</h1>
+        </div>
+        <div class="col-left">
+            <form action="/" method="POST">
+                <textarea class="textarea" rows="50" name="csv_text">{% if csv_text %}{{ csv_text }}{% endif %}</textarea>
+                <button>Submit</button>
+            </form>
+        </div>
+
+        <div class="col-right">
+            {% if name %}
+                {{ name }}
+            {% endif %}
+        </div>
+
+    </body>
+</html>
